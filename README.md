@@ -70,7 +70,7 @@ To run this project, you must insert your own API keys:
 ### 2. Firebase Setup
 1.  Download your `google-services.json` from the Firebase Console.
 2.  Place it in the `app/` directory of the project.
-3.  **Console Settings:** 
+3.  **Console Settings:**
     - Go to **Authentication** > **Sign-in Method**.
     - **Enable Email/Password** to ensure the login/register pages work perfectly.
     - Enable **Cloud Firestore** to store user details.
