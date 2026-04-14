@@ -82,7 +82,7 @@ To run this project, you must insert your own API keys:
 **Samriddh Anand**, #TheExpeditionsAlchemist                    
 **Role** - Tourist Packages Feature
 
-**Sara Deshpande**, #ThePointOfNoReturn                          
+**Sara Deshpande**, #WeavingThePointOfNoReturn                          
 **Role** - Checkout Experience
 
 **Shivli Soni**, #TheArchmageOfAesthetics                                
