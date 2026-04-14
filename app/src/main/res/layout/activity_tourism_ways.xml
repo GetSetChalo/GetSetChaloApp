@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/hd_bg">
+
+    <!-- ══════════════════════════════════════════════════════
+         HEADER — GetSetChalo · City
+         ══════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:background="@color/hd_card_bg">
+
+        <!-- Back arrow -->
+        <ImageButton
+            android:id="@+id/btnTwBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@null"
+            android:src="@drawable/ic_arrow_back_white"
+            android:scaleType="center"
+            android:contentDescription="Back"
+            android:padding="6dp"/>
+
+        <!-- GetSetChalo . City -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set"
+                android:textColor="@color/hd_gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chalo"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" . "
+                android:textColor="@color/hd_gold"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tvHeaderCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jaipur"
+                android:textColor="@color/hd_gold"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+        </LinearLayout>
+
+        <!-- Profile avatar — solid gold, dark icon -->
+        <ImageView
+            android:id="@+id/btnTwProfile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/mat_profile_icon"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <!-- ══════════════════════════════════════════════════════
+         TAB BAR
+         ══════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:background="@color/hd_card_bg"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/tabHotels"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Hotels"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/tabPackages"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Tourism\nPackages"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.1"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:id="@+id/tabDestinations"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Tourist\nDestinations"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.1"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION LABEL  e.g. "| Hotels in Jaipur"
+         ══════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="6dp">
+
+        <View
+            android:layout_width="3dp"
+            android:layout_height="17dp"
+            android:background="@color/hd_gold"
+            android:layout_marginEnd="9dp"/>
+
+        <TextView
+            android:id="@+id/tvSectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hotels in Jaipur"
+            android:textColor="@color/hd_gold"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.01"/>
+    </LinearLayout>
+
+    <!-- ══════════════════════════════════════════════════════
+         CONTENT AREA — RecyclerView / Coming Soon / Progress
+         ══════════════════════════════════════════════════════ -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Hotel list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/twRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            android:paddingTop="4dp"
+            android:paddingBottom="16dp"
+            android:visibility="gone"/>
+
+        <!-- Coming Soon card -->
+        <LinearLayout
+            android:id="@+id/twComingSoon"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/tw_coming_soon_card"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coming\nSoon...."
+                android:textColor="@color/hd_gold"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.3"/>
+        </LinearLayout>
+
+        <!-- Loading spinner -->
+        <ProgressBar
+            android:id="@+id/twProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+</LinearLayout>

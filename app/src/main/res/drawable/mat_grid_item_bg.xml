@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background -->
+    <solid android:color="@color/mat_gridButtons"/>
+
+    <!-- Rounded corners -->
+    <corners android:radius="20dp"/>
+
+    <!-- Border (optional glow) -->
+    <stroke
+        android:width="1dp"
+        android:color="#FFC107"/>
+</shape>

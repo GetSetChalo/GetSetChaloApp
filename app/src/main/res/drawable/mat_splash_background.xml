@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- MAIN BACKGROUND -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#0a0014"
+                android:endColor="#3b0066"
+                android:angle="270" />
+        </shape>
+    </item>
+
+    <!-- RADIAL GLOW -->
+    <item>
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="500dp"
+                android:centerX="0.5"
+                android:centerY="0.4"
+                android:startColor="#4d1a66"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+</layer-list>

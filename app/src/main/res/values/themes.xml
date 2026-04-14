@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MatApp2" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/mat_secondary</item>
+        <item name="android:navigationBarColor">@color/mat_secondary</item>
+    </style>
+
+    <style name="Theme.MatApp2" parent="Base.Theme.MatApp2" />
+
+    <style name="tourist_Theme_TouristPackages" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#7C3AED</item>
+        <item name="colorPrimaryDark">#2D0B4E</item>
+        <item name="colorAccent">#7C3AED</item>
+        <item name="android:windowBackground">#2D0B4E</item>
+        <item name="android:statusBarColor">#2D0B4E</item>
+        <item name="android:navigationBarColor">#2D0B4E</item>
+    </style>
+    <style name="mat_Base.Theme.MAT_PROJECT" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/mat_secondary</item>
+        <item name="android:navigationBarColor">@color/mat_secondary</item>
+    </style>
+    <style name="mat_Theme.MAT_PROJECT" parent="mat_Base.Theme.MAT_PROJECT" />
+    <style name="ta_Base.Theme.TourismApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ta_tab_active</item>
+        <item name="colorPrimaryVariant">@color/ta_bg_purple</item>
+        <item name="colorOnPrimary">@color/ta_text_white</item>
+        <item name="colorSecondary">@color/ta_gold</item>
+        <item name="colorOnSecondary">@color/ta_card_bg_dark</item>
+        <item name="android:windowBackground">@color/ta_bg_deep_purple</item>
+        <item name="android:statusBarColor">@color/ta_bg_deep_purple</item>
+        <item name="android:navigationBarColor">@color/ta_card_bg</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+    <style name="ta_Theme.TourismApp" parent="ta_Base.Theme.TourismApp" />
+
+
+    <!-- ==================== td_ (TouristDestinations) ==================== -->
+    <style name="td_Base.Theme.TouristDestinations" parent="Theme.Material3.DayNight.NoActionBar">
+            <item name="android:windowBackground">@color/td_colorBackground</item>
+            <item name="android:statusBarColor">@color/td_colorBackground</item>
+            <item name="android:navigationBarColor">@color/td_colorBackground</item>
+            <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+            <item name="colorPrimary">@color/td_colorGold</item>
+            <item name="colorPrimaryVariant">@color/td_colorGoldDim</item>
+            <item name="colorOnPrimary">@color/td_colorRatingText</item>
+            <item name="colorSurface">@color/td_colorSurface</item>
+        </style>
+    
+        <style name="td_Theme.TouristDestinations" parent="td_Base.Theme.TouristDestinations" />
+</resources>

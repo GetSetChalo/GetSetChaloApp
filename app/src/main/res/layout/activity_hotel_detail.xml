@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_hotel_detail.xml  –  Dark-theme redesign matching Image 2.
+    KEY FIX: RadioButtons are now DIRECT children of their RadioGroup
+    (wrapped only by layout params, not by MaterialCardView) so that
+    RadioGroup.getCheckedRadioButtonId() works correctly.
+    Visual styling is achieved via bg_radio_card.xml stateful drawable.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hd_bg">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         APP BAR  –  deep-purple background, gold title, back arrow
+         ═══════════════════════════════════════════════════════════ -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hd_card_bg"
+        app:elevation="4dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_detail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/hd_card_bg"
+            app:navigationIcon="@drawable/ic_arrow_back_white"
+            app:navigationIconTint="@color/hd_gold"
+            app:titleTextColor="@color/hd_gold"
+            app:subtitleTextColor="@color/hd_label"
+            tools:title="Hotel Name" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SCROLLABLE CONTENT
+         ═══════════════════════════════════════════════════════════ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ─── MAP + "Open in Maps" overlay ────────────────────── -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <org.osmdroid.views.MapView
+                    android:id="@+id/map_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_open_maps"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="Open in Maps"
+                    android:textColor="@color/hd_text_main"
+                    android:textSize="11sp"
+                    app:icon="@android:drawable/ic_menu_directions"
+                    app:iconTint="@color/hd_gold"
+                    app:strokeColor="@color/hd_radio_stroke"
+                    app:backgroundTint="#CC21113D" />
+
+            </FrameLayout>
+
+            <!-- ─── PADDED CONTENT AREA ──────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="24dp">
+
+                <!-- ADDRESS CARD ──────────────────────────────────── -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/hd_card_bg"
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/hd_separator"
+                    app:strokeWidth="1dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="14dp"
+                        android:gravity="top">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@android:drawable/ic_menu_mylocation"
+                            android:tint="@color/hd_gold"
+                            android:contentDescription="Location pin" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/detail_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/hd_text_main"
+                                android:textSize="14sp"
+                                android:lineSpacingMultiplier="1.3"
+                                tools:text="Circuit House Road, Cantt Area" />
+
+                            <TextView
+                                android:id="@+id/detail_country"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/hd_gold"
+                                android:textSize="12sp"
+                                tools:text="Jodhpur, Rajasthan — 342 006" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SEPARATOR ─────────────────────────────────────── -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="@color/hd_separator" />
+
+                <!-- PRICE ─────────────────────────────────────────── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PRICE"
+                    android:textColor="@color/hd_label"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.12"
+                    android:textAllCaps="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/detail_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/hd_gold"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        tools:text="INR : 9290" />
+
+
+                    <ImageButton
+                        android:id="@+id/btn_hotel_fav"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="24dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/mat_outline_bookmark_heart_24"
+                        android:scaleType="centerInside"
+                        android:tint="#FFC107" />
+
+                </LinearLayout>
+
+                <!-- SEPARATOR ─────────────────────────────────────── -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/hd_separator" />
+
+                <!-- SELECT ROOM TYPE ──────────────────────────────── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SELECT ROOM TYPE :"
+                    android:textColor="@color/hd_gold"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="10dp" />
+
+                <!--
+                     Room-type group is a plain LinearLayout.
+                     Mutual exclusion is handled entirely in Java (wireRadioGroup).
+                     RadioButton circles still render; no RadioGroup needed.
+                -->
+                <LinearLayout
+                    android:id="@+id/rg_room_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Row 1: Standard | Deluxe -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <RadioButton
+                            android:id="@+id/rb_standard"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            android:text="Standard"
+                            android:textColor="@color/hd_text_main"
+                            android:paddingStart="12dp"
+                            android:buttonTint="@color/hd_gold"
+                            android:background="@drawable/bg_radio_card_default"
+                            android:gravity="center_vertical" />
+
+                        <RadioButton
+                            android:id="@+id/rb_deluxe"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            android:text="Deluxe"
+                            android:textColor="@color/hd_text_main"
+                            android:paddingStart="12dp"
+                            android:buttonTint="@color/hd_gold"
+                            android:background="@drawable/bg_radio_card_default"
+                            android:gravity="center_vertical" />
+
+                    </LinearLayout>
+
+                    <!-- Row 2: Super Deluxe | Premium -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_super_deluxe"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            android:text="Super Deluxe"
+                            android:textColor="@color/hd_text_main"
+                            android:paddingStart="12dp"
+                            android:buttonTint="@color/hd_gold"
+                            android:background="@drawable/bg_radio_card_default"
+                            android:gravity="center_vertical" />
+
+                        <RadioButton
+                            android:id="@+id/rb_premium"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            android:text="Premium"
+                            android:textColor="@color/hd_text_main"
+                            android:paddingStart="12dp"
+                            android:buttonTint="@color/hd_gold"
+                            android:background="@drawable/bg_radio_card_default"
+                            android:gravity="center_vertical" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- SEPARATOR ─────────────────────────────────────── -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/hd_separator" />
+
+                <!-- AC / NON-AC ────────────────────────────────────── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AC / NON-AC ROOM :"
+                    android:textColor="@color/hd_gold"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- AC/NON-AC group: plain LinearLayout, Java-managed mutual exclusion -->
+                <LinearLayout
+                    android:id="@+id/rg_ac_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_ac"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:text="AC"
+                        android:textColor="@color/hd_text_main"
+                        android:paddingStart="16dp"
+                        android:buttonTint="@color/hd_gold"
+                        android:background="@drawable/bg_radio_card_default"
+                        android:gravity="center_vertical" />
+
+                    <RadioButton
+                        android:id="@+id/rb_non_ac"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:text="NON-AC"
+                        android:textColor="@color/hd_text_main"
+                        android:paddingStart="16dp"
+                        android:buttonTint="@color/hd_gold"
+                        android:background="@drawable/bg_radio_card_default"
+                        android:gravity="center_vertical" />
+
+                </LinearLayout>
+
+                <!-- SEPARATOR ─────────────────────────────────────── -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/hd_separator" />
+
+                <!-- TOTAL TRAVELLERS ────────────────────────────────── -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TOTAL TRAVELLERS :"
+                        android:textColor="@color/hd_gold"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+
+                    <!-- Stepper: [ – ]  01  [ + ] -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/bg_stepper_border"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp">
+
+                        <ImageButton
+                            android:id="@+id/btn_travelers_minus"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_minus"
+                            android:tint="@color/hd_gold"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="Decrease travellers" />
+
+                        <TextView
+                            android:id="@+id/tv_travelers_count"
+                            android:layout_width="42dp"
+                            android:layout_height="wrap_content"
+                            android:text="01"
+                            android:textColor="@color/hd_text_main"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                        <ImageButton
+                            android:id="@+id/btn_travelers_plus"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@android:drawable/ic_input_add"
+                            android:tint="@color/hd_gold"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="Increase travellers" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- SEPARATOR ─────────────────────────────────────── -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/hd_separator" />
+
+                <!-- CHECK-IN / CHECK-OUT ───────────────────────────── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHECK-IN / CHECK-OUT :"
+                    android:textColor="@color/hd_gold"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <!-- CHECK-IN -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CHECK-IN"
+                            android:textColor="@color/hd_label"
+                            android:textSize="11sp"
+                            android:letterSpacing="0.10"
+                            android:layout_marginBottom="6dp" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_check_in"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="8dp"
+                            android:background="@drawable/bg_date_picker_outline"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <TextView
+                                android:id="@+id/tv_check_in"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Select date"
+                                android:textColor="@color/hd_text_main"
+                                android:textSize="13sp" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@android:drawable/arrow_down_float"
+                                android:tint="@color/hd_gold"
+                                android:contentDescription="Pick date" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- CHECK-OUT -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CHECK-OUT"
+                            android:textColor="@color/hd_label"
+                            android:textSize="11sp"
+                            android:letterSpacing="0.10"
+                            android:layout_marginBottom="6dp" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_check_out"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="8dp"
+                            android:background="@drawable/bg_date_picker_outline"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <TextView
+                                android:id="@+id/tv_check_out"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Select date"
+                                android:textColor="@color/hd_text_main"
+                                android:textSize="13sp" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@android:drawable/arrow_down_float"
+                                android:tint="@color/hd_gold"
+                                android:contentDescription="Pick date" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- NEXT BUTTON ────────────────────────────────────── -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="64dp"
+                    android:text="NEXT"
+                    android:textColor="#1A0030"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.12"
+                    app:backgroundTint="@color/hd_gold_btn"
+                    app:cornerRadius="8dp"
+                    app:elevation="4dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         LOADING OVERLAY – shown until geocoding resolves.
+         Sits as the LAST child so it renders on top of everything.
+         Hidden with a fade-out animation once map is ready.
+         ═══════════════════════════════════════════════════════════ -->
+    <FrameLayout
+        android:id="@+id/map_loading_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F016082C"
+        android:visibility="visible"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <ProgressBar
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:indeterminateTint="@color/hd_gold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Locating hotel on map…"
+                android:textColor="@color/hd_text_main"
+                android:textSize="14sp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

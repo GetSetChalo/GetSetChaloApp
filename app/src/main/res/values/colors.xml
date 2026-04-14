@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Light-theme tokens (HotelListActivity) -->
+    <color name="primary_blue">#003580</color>
+    <color name="accent_gold">#FFB700</color>
+    <color name="bg_light_grey">#F5F5F5</color>
+    <color name="text_dark">#212121</color>
+    <color name="text_grey">#757575</color>
+
+    <!-- Dark-theme tokens (HotelDetailActivity) -->
+    <color name="hd_bg">#2D0B4E</color>
+    <color name="hd_card_bg">#21113D</color>
+    <color name="hd_separator">#3A2A5D</color>
+    <color name="hd_label">#B39DDB</color>
+    <color name="hd_gold">#FFC107</color>
+    <color name="hd_gold_btn">#F4C430</color>
+    <color name="hd_text_main">#EDE7FF</color>
+    <color name="hd_radio_stroke">#6A4FAB</color>
+    <color name="hd_stepper_bg">#2E1A50</color>
+
+    <color name="checkout_bg_dark">#12082B</color>
+    <color name="checkout_bg_header">#1A0D3A</color>
+    <color name="checkout_bg_card">#21113D</color>
+    <color name="checkout_gold">#FFC107</color>
+    <color name="checkout_gold_dark">#F4C430</color>
+    <color name="checkout_text_primary">#EDE7FF</color>
+    <color name="checkout_text_secondary">#B39DDB</color>
+    <color name="checkout_text_hint">#4A3D6A</color>
+    <color name="checkout_white">#FFFFFF</color>
+    <color name="checkout_green_save">#8FFFB0</color>
+    <color name="checkout_red_logout">#FF6B6B</color>
+    <color name="checkout_divider">#3A2A5D</color>
+    <color name="checkout_saffron">#FF9933</color>
+    <color name="checkout_india_green">#138808</color>
+    <color name="checkout_status_bar">#0E0622</color>
+    <color name="checkout_transparent">#00000000</color>
+    <color name="checkout_overlay_bg">#B3000000</color>
+    <color name="tourist_bg_dark">#2D0B4E</color>
+    <color name="tourist_purple_primary">#7C3AED</color>
+    <color name="tourist_text_gold">#F5A623</color>
+    <color name="mat_black">#FF000000</color>
+    <color name="mat_white">#FFFFFFFF</color>
+    <color name="mat_logo_saffron">#F9A01B</color>
+    <color name="mat_primary">#1A0933</color>
+    <color name="mat_secondary">#2D0B4E</color>
+    <color name="mat_accent">#F4A300</color>
+    <color name="mat_textPrimary">#FFFFFF</color>
+    <color name="mat_textSecondary">#BFAEDC</color>
+    <color name="mat_cardBg">#2A0C45</color>
+    <color name="mat_gridButtons">#240832</color>
+    <color name="ta_black">#FF000000</color>
+    <color name="ta_white">#FFFFFFFF</color>
+    <color name="ta_bg_deep_purple">#1A0533</color>
+    <color name="ta_bg_mid_purple">#2D0A5C</color>
+    <color name="ta_bg_purple">#3B0F7A</color>
+    <color name="ta_card_bg">#2A1550</color>
+    <color name="ta_card_bg_dark">#1E0E3E</color>
+    <color name="ta_gold">#F5A623</color>
+    <color name="ta_gold_dark">#D4881A</color>
+    <color name="ta_gold_light">#FFD77A</color>
+    <color name="ta_tab_active">#7B3FE4</color>
+    <color name="ta_tab_inactive_text">#B0A0CC</color>
+    <color name="ta_text_white">#FFFFFF</color>
+    <color name="ta_text_heading">#F5E6C8</color>
+    <color name="ta_text_subtitle">#C8B8E8</color>
+    <color name="ta_text_label">#D4C0F0</color>
+    <color name="ta_text_hint">#8870AA</color>
+    <color name="ta_text_link">#F5A623</color>
+    <color name="ta_text_or">#9080B0</color>
+    <color name="ta_input_bg">#1E0E3E</color>
+    <color name="ta_input_border">#4A2880</color>
+    <color name="ta_input_border_focus">#7B3FE4</color>
+    <color name="ta_input_icon">#8870AA</color>
+    <color name="ta_divider">#3D2060</color>
+    <color name="ta_google_btn_bg">#2A1550</color>
+    <color name="ta_google_btn_border">#4A2880</color>
+    <color name="ta_success">#4CAF50</color>
+    <color name="ta_error">#FF5252</color>
+    <color name="ta_dash_card1">#3B1278</color>
+    <color name="ta_dash_card2">#1A3A6B</color>
+    <color name="ta_dash_card3">#2D4A1A</color>
+    <color name="ta_dash_card4">#4A1A1A</color>
+    <color name="ta_chip_bg">#3B1278</color>
+    <color name="ta_chip_active_bg">#F5A623</color>
+    <color name="ta_chip_active_text">#1A0533</color>
+
+
+    <!-- ==================== td_ (TouristDestinations) ==================== -->
+    <color name="td_black">#FF000000</color>
+        <color name="td_white">#FFFFFFFF</color>
+    
+        <!-- Taj Mahal Theme -->
+        <color name="td_colorBackground">#2D0B4E</color>
+        <color name="td_colorSurface">#3A1361</color>
+        <color name="td_colorGold">#D4AF37</color>
+        <color name="td_colorGoldDim">#8A6D14</color>
+        <color name="td_colorTextPrimary">#FFFFFF</color>
+        <color name="td_colorTextSecondary">#8A95B0</color>
+        <color name="td_colorButtonBg">#3A1361</color>
+        <color name="td_colorCardBorder">#4A1A7D</color>
+        <color name="td_colorRatingText">#1A1400</color>
+</resources>

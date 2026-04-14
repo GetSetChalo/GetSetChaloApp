@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/checkout_bg_booking_card"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvBookingIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/checkout_bg_section_icon"
+            android:text="🏨"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/tvBookingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Taj Palace"
+                android:textColor="@color/checkout_white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvBookingCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agra"
+                android:textColor="@color/checkout_text_secondary"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/tvBookingBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/checkout_bg_promo_chip"
+            android:text="CONFIRMED"
+            android:textColor="@color/checkout_gold"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/checkout_divider"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total Amount Paid:"
+            android:textColor="@color/checkout_text_secondary"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvBookingTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹10,843"
+            android:textColor="@color/checkout_white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Stay Dates:"
+            android:textColor="@color/checkout_text_secondary"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvBookingDates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apr 12 → Apr 15"
+            android:textColor="@color/checkout_gold"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

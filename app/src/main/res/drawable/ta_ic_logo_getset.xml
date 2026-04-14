@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Outer purple background circle -->
+    <path
+        android:pathData="M100,100 m-96,0 a96,96 0 1,0 192,0 a96,96 0 1,0 -192,0"
+        android:fillColor="#6B21A8" />
+
+    <!-- Spider web / mandala lines (subtle) -->
+    <path android:pathData="M100,10 L100,190" android:strokeColor="#7C3AED" android:strokeWidth="0.6" android:fillColor="#00000000" android:strokeAlpha="0.4"/>
+    <path android:pathData="M10,100 L190,100" android:strokeColor="#7C3AED" android:strokeWidth="0.6" android:fillColor="#00000000" android:strokeAlpha="0.4"/>
+    <path android:pathData="M29,29 L171,171" android:strokeColor="#7C3AED" android:strokeWidth="0.6" android:fillColor="#00000000" android:strokeAlpha="0.4"/>
+    <path android:pathData="M171,29 L29,171" android:strokeColor="#7C3AED" android:strokeWidth="0.6" android:fillColor="#00000000" android:strokeAlpha="0.4"/>
+    <!-- Concentric rings -->
+    <path android:pathData="M100,100 m-30,0 a30,30 0 1,0 60,0 a30,30 0 1,0 -60,0" android:strokeColor="#7C3AED" android:strokeWidth="0.5" android:fillColor="#00000000" android:strokeAlpha="0.35"/>
+    <path android:pathData="M100,100 m-50,0 a50,50 0 1,0 100,0 a50,50 0 1,0 -100,0" android:strokeColor="#7C3AED" android:strokeWidth="0.5" android:fillColor="#00000000" android:strokeAlpha="0.35"/>
+    <path android:pathData="M100,100 m-70,0 a70,70 0 1,0 140,0 a70,70 0 1,0 -140,0" android:strokeColor="#7C3AED" android:strokeWidth="0.5" android:fillColor="#00000000" android:strokeAlpha="0.35"/>
+
+    <!-- Orange outer thick ring (r=84) -->
+    <path
+        android:pathData="M100,100 m-84,0 a84,84 0 1,0 168,0 a84,84 0 1,0 -168,0"
+        android:strokeColor="#F97316"
+        android:strokeWidth="5"
+        android:fillColor="#00000000" />
+
+    <!--
+        YELLOW DOTS — 12 dots evenly at 30° intervals ON the orange ring (r=84)
+        Positions: cx = 100 + 84*sin(angle), cy = 100 - 84*cos(angle)
+        0°   → (100.00,  16.00)
+        30°  → (142.00,  27.00)
+        60°  → (172.74,  58.00)
+        90°  → (184.00, 100.00)
+        120° → (172.74, 142.00)
+        150° → (142.00, 173.00)
+        180° → (100.00, 184.00)
+        210° → ( 58.00, 173.00)
+        240° → ( 27.26, 142.00)
+        270° → ( 16.00, 100.00)
+        300° → ( 27.26,  58.00)
+        330° → ( 58.00,  27.00)
+    -->
+    <!-- 0° top -->
+    <path android:pathData="M100,16 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 30° top-right -->
+    <path android:pathData="M142,27 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 60° right-top -->
+    <path android:pathData="M173,58 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 90° right -->
+    <path android:pathData="M184,100 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 120° right-bottom -->
+    <path android:pathData="M173,142 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 150° bottom-right -->
+    <path android:pathData="M142,173 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 180° bottom -->
+    <path android:pathData="M100,184 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 210° bottom-left -->
+    <path android:pathData="M58,173 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 240° left-bottom -->
+    <path android:pathData="M27,142 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 270° left -->
+    <path android:pathData="M16,100 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 300° left-top -->
+    <path android:pathData="M27,58 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+    <!-- 330° top-left -->
+    <path android:pathData="M58,27 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#EAB308"/>
+
+    <!--
+        GREEN DOTS — 4 dots at 45° diagonals ON the orange ring (r=84)
+        45°  → (159.41, 40.59)
+        135° → (159.41, 159.41)
+        225° → ( 40.59, 159.41)
+        315° → ( 40.59,  40.59)
+    -->
+    <!-- 45° top-right diagonal -->
+    <path android:pathData="M159,41 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0" android:fillColor="#22C55E"/>
+    <!-- 135° bottom-right diagonal -->
+    <path android:pathData="M159,159 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0" android:fillColor="#22C55E"/>
+    <!-- 225° bottom-left diagonal -->
+    <path android:pathData="M41,159 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0" android:fillColor="#22C55E"/>
+    <!-- 315° top-left diagonal -->
+    <path android:pathData="M41,41 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0" android:fillColor="#22C55E"/>
+
+    <!-- Orange petal / lotus shape behind inner circle (top + bottom + left + right) -->
+    <path android:pathData="M100,48 C88,62 88,78 100,78 C112,78 112,62 100,48 Z" android:fillColor="#F97316" android:fillAlpha="0.7"/>
+    <path android:pathData="M100,152 C88,138 88,122 100,122 C112,122 112,138 100,152 Z" android:fillColor="#F97316" android:fillAlpha="0.7"/>
+    <path android:pathData="M48,100 C62,88 78,88 78,100 C78,112 62,112 48,100 Z" android:fillColor="#F97316" android:fillAlpha="0.7"/>
+    <path android:pathData="M152,100 C138,88 122,88 122,100 C122,112 138,112 152,100 Z" android:fillColor="#F97316" android:fillAlpha="0.7"/>
+
+    <!-- Dark navy inner circle -->
+    <path
+        android:pathData="M100,100 m-52,0 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0"
+        android:fillColor="#0D0730" />
+
+    <!-- Orange inner ring border -->
+    <path
+        android:pathData="M100,100 m-52,0 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0"
+        android:strokeColor="#F97316"
+        android:strokeWidth="3"
+        android:fillColor="#00000000" />
+
+    <!-- ═══════════════════════════════════════
+         MOSQUE ICON — Fixed to match image
+    ═══════════════════════════════════════ -->
+
+    <!-- Central large yellow dome / sphere -->
+    <path
+        android:pathData="M100,100 m-13,0 a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0"
+        android:fillColor="#EAB308" />
+
+    <!-- Dome finial stick -->
+    <path android:pathData="M100,87 L100,80" android:strokeColor="#EAB308" android:strokeWidth="2.5" android:fillColor="#00000000"/>
+    <!-- Finial top ball -->
+    <path android:pathData="M100,80 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#EAB308"/>
+
+    <!--
+        LEFT PILLAR — tall orange column with a LARGE YELLOW CIRCLE on top (like image)
+        Column: x=74..82, y=110..130
+        Large yellow ball on top: center (78, 106), radius 7
+    -->
+    <!-- Left pillar column (orange) -->
+    <path android:pathData="M74,110 L82,110 L82,130 L74,130 Z" android:fillColor="#F97316"/>
+    <!-- Left pillar top large yellow circle -->
+    <path android:pathData="M78,106 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0" android:fillColor="#EAB308"/>
+
+    <!--
+        RIGHT PILLAR — mirror of left
+        Column: x=118..126, y=110..130
+        Large yellow ball on top: center (122, 106), radius 7
+    -->
+    <!-- Right pillar column (orange) -->
+    <path android:pathData="M118,110 L126,110 L126,130 L118,130 Z" android:fillColor="#F97316"/>
+    <!-- Right pillar top large yellow circle -->
+    <path android:pathData="M122,106 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0" android:fillColor="#EAB308"/>
+
+    <!-- Main building body — solid orange, NO windows, NO door -->
+    <path android:pathData="M82,113 L118,113 L118,130 L82,130 Z" android:fillColor="#F97316"/>
+
+    <!-- Base platform (yellow ground strip) -->
+    <path android:pathData="M68,130 L132,130 L132,136 L68,136 Z" android:fillColor="#EAB308"/>
+
+</vector>

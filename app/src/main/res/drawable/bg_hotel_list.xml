@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layered drawable that replicates the dark-purple radial-glow background
+    seen in the reference image:
+      Layer 0 – solid deep-indigo base (#120B2E)
+      Layer 1 – warm orange-amber central glow (radial, semi-transparent)
+      Layer 2 – large mid-purple halo that fades to transparent
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Layer 0: deep-indigo solid base -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#120B2E" />
+        </shape>
+    </item>
+
+    <!-- Layer 1: warm orange-amber core glow centred in screen -->
+    <item
+        android:gravity="center"
+        android:width="220dp"
+        android:height="320dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="50%"
+                android:startColor="#CC6A1200"
+                android:centerColor="#88A03000"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+    <!-- Layer 2: large mid-purple radial halo -->
+    <item
+        android:gravity="center"
+        android:width="380dp"
+        android:height="520dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="50%"
+                android:startColor="#885B2D8F"
+                android:centerColor="#443A1F6B"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+</layer-list>

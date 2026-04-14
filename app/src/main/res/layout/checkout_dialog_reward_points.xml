@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/checkout_bg_card"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Header & Close -->
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="REWARD POINTS"
+            android:textColor="@color/checkout_gold"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+
+        <ImageButton
+            android:id="@+id/btnRewardClose"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:tint="@color/checkout_text_secondary" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/checkout_divider" />
+
+    <!-- Points Value -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/checkout_bg_section_icon"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="✨"
+            android:textSize="32sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Your Current Balance"
+            android:textColor="@color/checkout_text_secondary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvRewardPointsBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="300"
+            android:textColor="@color/checkout_white"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Earn 50 pts on every exact booking.\nUse points to get flat discounts!"
+            android:textAlignment="center"
+            android:textColor="@color/checkout_text_hint"
+            android:textSize="12sp" />
+            
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="16dp">
+            <LinearLayout
+                android:id="@+id/rewardHistoryContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRewardGotIt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/checkout_bg_button_gold"
+        android:stateListAnimator="@null"
+        android:text="Got it"
+        android:textColor="@color/checkout_bg_dark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

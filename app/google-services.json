@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1069082537974",
+    "project_id": "getsetchalo-2f3e2",
+    "storage_bucket": "getsetchalo-2f3e2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069082537974:android:e31e1233ed3075314621d7",
+        "android_client_info": {
+          "package_name": "com.myapplication.matapp2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2n-V42M-rD54_ADWpJtjuPX7NHXjw5a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

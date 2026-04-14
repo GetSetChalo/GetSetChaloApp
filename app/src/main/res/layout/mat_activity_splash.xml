@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/mat_splash_background"
+    android:id="@+id/mat_splashRoot">
+
+    <!--
+    ============================================================
+      GetSetChalo — Splash Screen Layout
+      Dark purple theme with gold accents
+    ============================================================
+    -->
+    <!-- ── MANDALA DESIGN (behind logo) ── -->
+
+
+
+    <!-- ── BACKGROUND GLOW CIRCLE (soft orange behind logo) ── -->
+
+    <!-- ── LOGO IMAGE (Taj + Lotus SVG we'll add as PNG) ── -->
+
+
+    <!-- ── APP NAME: GetSetChalo ── -->
+
+    <!-- ── TAGLINE ── -->
+
+    <ImageView
+        android:id="@+id/mat_mandala_view"
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:layout_gravity="center"
+        android:alpha="0.3"
+        android:src="@drawable/mat_mandala_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444" />
+
+    <ImageView
+        android:id="@+id/mat_splashLogo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:src="@drawable/mat_splash_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444" />
+
+    <!-- ── INDIA TRICOLOR STRIP (3 thin views side by side) ── -->
+
+    <TextView
+        android:id="@+id/mat_splashAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:fontFamily="@font/mat_yatra_one"
+        android:letterSpacing="0.05"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <TextView
+        android:id="@+id/mat_splashTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="384dp"
+        android:alpha="1"
+        android:letterSpacing="0.3"
+        android:text="EXPLORE THE INCREDIBLE INDIA"
+        android:textColor="#FFB74D"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mat_splashAppName" />
+
+    <View
+        android:id="@+id/mat_stripSaffron"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="#FF9933"
+
+        android:alpha="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/mat_stripWhite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mat_stripWhite"
+        android:layout_marginBottom="110dp" />
+
+    <View
+        android:id="@+id/mat_stripWhite"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="#FFFFFF"
+
+        android:alpha="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/mat_stripGreen"
+        app:layout_constraintStart_toEndOf="@id/mat_stripSaffron"
+        android:layout_marginBottom="110dp" />
+
+    <View
+        android:id="@+id/mat_stripGreen"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="#138808"
+
+        android:alpha="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mat_stripWhite"
+        android:layout_marginBottom="110dp" />
+
+    <!-- ── LOADING DOTS (3 small circles) ── -->
+
+    <!-- ── FOOTER: Made with love in India ── -->
+
+    <LinearLayout
+        android:id="@+id/mat_loadingDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918">
+
+        <View
+            android:id="@+id/mat_dot1"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/mat_dot_active" />
+
+        <View
+            android:id="@+id/mat_dot2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/mat_dot_active" />
+
+        <View
+            android:id="@+id/mat_dot3"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/mat_dot_active" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mat_splashFooter"
+        android:layout_width="298dp"
+        android:layout_height="31dp"
+
+        android:alpha="1"
+        android:letterSpacing="0.15"
+        android:text="Made with ♥ in India"
+        android:textAlignment="center"
+        android:textColor="#664422"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

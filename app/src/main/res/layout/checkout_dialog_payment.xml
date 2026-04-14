@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/checkout_bg_modal"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complete Payment"
+        android:textColor="@color/checkout_white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="6dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_horizontal" android:layout_marginBottom="16dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Total: " android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+        <TextView android:id="@+id/tvPayTotal"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="₹10,843" android:textColor="@color/checkout_gold" android:textSize="13sp" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinnerPayment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/checkout_bg_spinner"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etUpiId"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/checkout_bg_field_input"
+        android:hint="yourname@upi"
+        android:textColorHint="@color/checkout_text_hint"
+        android:textColor="@color/checkout_text_primary"
+        android:textSize="13sp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:inputType="text"
+        android:visibility="gone"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnConfirmPay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Confirm &amp; Pay"
+        android:textColor="@color/checkout_bg_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/checkout_bg_button_gold"
+        android:stateListAnimator="@null"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/btnCancelPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textColor="@color/checkout_text_hint"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</LinearLayout>

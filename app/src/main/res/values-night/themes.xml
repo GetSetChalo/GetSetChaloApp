@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MatApp2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="checkout_Base.Theme.Checkout" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+    <style name="mat_Base.Theme.MAT_PROJECT" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="mat_colorPrimary">@color/mat_my_dark_primary</item> -->
+    </style>
+    <style name="ta_Base.Theme.TourismApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ta_tab_active</item>
+        <item name="colorPrimaryVariant">@color/ta_bg_purple</item>
+        <item name="colorOnPrimary">@color/ta_text_white</item>
+        <item name="colorSecondary">@color/ta_gold</item>
+        <item name="colorOnSecondary">@color/ta_card_bg_dark</item>
+        <item name="android:windowBackground">@color/ta_bg_deep_purple</item>
+        <item name="android:statusBarColor">@color/ta_bg_deep_purple</item>
+        <item name="android:navigationBarColor">@color/ta_card_bg</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+    <style name="ta_Theme.TourismApp" parent="ta_Base.Theme.TourismApp" />
+</resources>

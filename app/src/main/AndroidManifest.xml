@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:name=".MatApp"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/applogo"
+        android:label="GetSetChalo"
+        android:roundIcon="@drawable/applogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MatApp2">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+
+
+        <activity
+            android:name=".TourismWaysActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".HotelDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".TourismWaysActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TourismWaysActivity" />
+        </activity>
+        <activity
+            android:name=".BookingSummaryActivity"
+            android:exported="false"
+            android:parentActivityName=".HotelDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HotelDetailActivity" />
+        </activity>
+
+        <activity
+            android:name=".checkout_.CheckoutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MatApp22.Checkout"
+            android:windowSoftInputMode="adjustResize"
+            android:forceDarkAllowed="false">
+        </activity>
+        <activity
+            android:name=".checkout_.ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MatApp22.Checkout"
+            android:forceDarkAllowed="false" />
+        <activity
+            android:name=".checkout_.MyBookingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MatApp22.Checkout"
+            android:forceDarkAllowed="false" />
+        <!--
+        <activity
+            android:name=".tourist_packages.PackagesActivity"
+            android:exported="false"
+            android:theme="@style/tourist_Theme_TouristPackages"
+            android:parentActivityName=".tourist_packages.PackageMain" />
+            -->
+
+        <activity
+            android:name=".tourist_packages.DetailActivity"
+            android:exported="false"
+            android:theme="@style/tourist_Theme_TouristPackages"
+            android:parentActivityName=".tourist_packages.PackagesActivity" />
+
+
+        <!-- ══════════════════════════════════════════════════════ -->
+        <!--  MAT_PROJECT activities (mat_project_pkg)             -->
+        <!-- ══════════════════════════════════════════════════════ -->
+
+        <activity
+            android:name=".mat_project_pkg.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".mat_project_pkg.HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity android:name=".mat_project_pkg.GoaActivity" />
+
+        <activity android:name=".mat_project_pkg.VaranasiActivity" />
+
+        <activity android:name=".mat_project_pkg.JaipurActivity" />
+
+        <activity android:name=".mat_project_pkg.AgraActivity" />
+
+        <activity android:name=".mat_project_pkg.ChennaiActivity" />
+
+        <activity android:name=".mat_project_pkg.NavigationBarActivity" />
+
+
+
+        <activity android:name=".mat_project_pkg.NotifActivity" />
+
+
+        <!-- ══════════════════════════════════════════════════════ -->
+        <!--  Tourismapp activities (ta_pkg)                       -->
+        <!-- ══════════════════════════════════════════════════════ -->
+        <activity
+            android:name=".ta_pkg.Login"
+            android:exported="true" />
+
+        <activity
+            android:name=".ta_pkg.Register"
+            android:exported="true" />
+
+        <activity
+            android:name=".ta_pkg.LoginMain"
+            android:exported="true" />
+
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- ============================================================== -->
+        <!--  TouristDestinations activities (td_pkg)                       -->
+        <!-- ============================================================== -->
+
+
+
+        <activity
+            android:name=".td_pkg.DestinationMain"
+            android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity
+            android:name=".td_pkg.AgraFortActivity"
+            android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity
+            android:name=".td_pkg.TombOfAkbarActivity"
+            android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity
+            android:name=".td_pkg.ItmadUdDaulaActivity"
+            android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.ShahiJamaMasjidActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+
+        <activity android:name=".td_pkg.HawaMahalActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.JantarMantarActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.CityPalaceActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.JalMahalActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.AlbertHallActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.JaigardhFortActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.AmberPalaceActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+
+        <activity android:name=".td_pkg.ColvaBeachActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.AnjunaMarketActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.BasilicaBomJesusActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.FontainhasActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.DudhsagarFallsActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.BagaBeachActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.PalolemBeachActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.AgondaBeachActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+
+        <activity android:name=".td_pkg.KashiVishwanathActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.DashashwamedhaGhatActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.AssiGhatActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.RamnagarFortActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.TulsiManasMandirActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.SarnathActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.ManikarnikaGhatActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.DhamekStupaActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+
+        <activity android:name=".td_pkg.SnowKingdomActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.KapaleeshwararTempleActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.MarinaBeachActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.ParthasarathyTempleActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.SanThomeChurchActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+        <activity android:name=".td_pkg.ElliotsBeachActivity" android:exported="false"
+            android:theme="@style/td_Theme.TouristDestinations" />
+    </application>
+</manifest>

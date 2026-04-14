@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/checkout_bg_dark">
+
+    <!-- Main content (header + scroll + CTA) -->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <!-- Header -->
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/checkout_bg_header"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/checkout_bg_back_btn_gold"
+                android:src="@drawable/checkout_ic_arrow_back"
+                android:scaleType="center"
+                android:padding="8dp"
+                android:stateListAnimator="@null"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CHECKOUT"
+                android:textColor="@color/checkout_gold"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <ImageView
+                android:id="@+id/btnProfile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/mat_profile_icon"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Scrollable content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <!-- Single child of ScrollView -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="12dp">
+
+                <!-- ===== GUEST DETAILS SECTION ===== -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/checkout_bg_card"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="12dp">
+
+                    <!-- Guest section header (clickable) -->
+                    <LinearLayout
+                        android:id="@+id/guestHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:background="@drawable/checkout_bg_section_icon"
+                            android:text="👥"
+                            android:textSize="22sp"
+                            android:gravity="center"
+                            android:includeFontPadding="false"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="GUEST DETAILS" style="@style/checkout_SectionLabelStyle"/>
+                            <TextView android:id="@+id/guestHeaderSub" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="1 guest · tap to fill" android:textColor="@color/checkout_text_secondary" android:textSize="12sp"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/guestChevron"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="›"
+                            android:textColor="@color/checkout_gold"
+                            android:textSize="20sp"/>
+                    </LinearLayout>
+
+                    <!-- Guest forms container — populated dynamically by Java -->
+                    <LinearLayout
+                        android:id="@+id/guestContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:padding="12dp" />
+
+                </LinearLayout>
+                <!-- END GUEST DETAILS SECTION -->
+
+                <!-- ===== HOTEL + STAY SECTION ===== -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/checkout_bg_card"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="10dp">
+
+                    <!-- Hotel row -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:padding="12dp">
+                        <TextView android:layout_width="42dp" android:layout_height="42dp"
+                            android:background="@drawable/checkout_bg_section_icon" android:text="🏨"
+                            android:textSize="22sp" android:gravity="center" android:includeFontPadding="false"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="10dp">
+                            <TextView android:id="@+id/tvHotelLabel" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="HOTEL" style="@style/checkout_SectionLabelStyle"/>
+                            <TextView android:id="@+id/tvHotelName" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="The Taj Palace, Agra" android:textColor="@color/checkout_text_primary" android:textSize="13sp"/>
+                            <TextView android:id="@+id/tvHotelRoomType" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Deluxe Heritage Suite · Pool view" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View android:id="@+id/viewStaySeparator" android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider"/>
+
+                    <!-- Stay row -->
+                    <LinearLayout android:id="@+id/layoutStayRow" android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:padding="12dp">
+                        <TextView android:layout_width="42dp" android:layout_height="42dp"
+                            android:background="@drawable/checkout_bg_section_icon" android:text="📅"
+                            android:textSize="22sp" android:gravity="center" android:includeFontPadding="false"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="STAY" style="@style/checkout_SectionLabelStyle"/>
+                            <TextView android:id="@+id/tvStayDetails" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="2 persons · 3 nights 4 days" android:textColor="@color/checkout_text_primary" android:textSize="13sp"/>
+                            <TextView android:id="@+id/tvStayDates" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Check-in Apr 12  →  Apr 15" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- END HOTEL + STAY SECTION -->
+
+                <!-- ===== PROMOS SECTION ===== -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/checkout_bg_card"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/promoHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <TextView android:layout_width="42dp" android:layout_height="42dp"
+                            android:background="@drawable/checkout_bg_section_icon" android:text="🎁"
+                            android:textSize="22sp" android:gravity="center" android:includeFontPadding="false"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="PROMOS" style="@style/checkout_SectionLabelStyle"/>
+                            <TextView android:id="@+id/tvPromoHeaderSub" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="No promo applied" android:textColor="@color/checkout_text_secondary" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/promoChevron" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="›" android:textColor="@color/checkout_gold" android:textSize="20sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/promoBody"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:padding="12dp">
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Tap a code to apply"
+                            android:textColor="@color/checkout_text_secondary" android:textSize="12sp"
+                            android:layout_marginBottom="8dp"/>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_marginBottom="8dp">
+                            <TextView android:id="@+id/chipEarlyBird"
+                                android:layout_width="wrap_content" android:layout_height="32dp"
+                                android:text="EARLYBIRD 15%" android:textSize="11sp" android:textColor="@color/checkout_gold"
+                                android:background="@drawable/checkout_bg_promo_chip"
+                                android:paddingStart="12dp" android:paddingEnd="12dp"
+                                android:gravity="center" android:includeFontPadding="false"
+                                android:clickable="true" android:focusable="true"
+                                android:layout_marginEnd="8dp"
+                                android:tag="15pct"/>
+                            <TextView android:id="@+id/chipFirst50"
+                                android:layout_width="wrap_content" android:layout_height="32dp"
+                                android:text="FIRST50" android:textSize="11sp" android:textColor="@color/checkout_gold"
+                                android:background="@drawable/checkout_bg_promo_chip"
+                                android:paddingStart="12dp" android:paddingEnd="12dp"
+                                android:gravity="center" android:includeFontPadding="false"
+                                android:clickable="true" android:focusable="true"
+                                android:layout_marginEnd="8dp"
+                                android:tag="50flat"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_marginBottom="8dp">
+                            <TextView android:id="@+id/chipMonsoon"
+                                android:layout_width="wrap_content" android:layout_height="32dp"
+                                android:text="MONSOON10" android:textSize="11sp" android:textColor="@color/checkout_gold"
+                                android:background="@drawable/checkout_bg_promo_chip"
+                                android:paddingStart="12dp" android:paddingEnd="12dp"
+                                android:gravity="center" android:includeFontPadding="false"
+                                android:clickable="true" android:focusable="true"
+                                android:layout_marginEnd="8dp"
+                                android:tag="10pct"/>
+                            <TextView android:id="@+id/chipGSC200"
+                                android:layout_width="wrap_content" android:layout_height="32dp"
+                                android:text="GSC200" android:textSize="11sp" android:textColor="@color/checkout_gold"
+                                android:background="@drawable/checkout_bg_promo_chip"
+                                android:paddingStart="12dp" android:paddingEnd="12dp"
+                                android:gravity="center" android:includeFontPadding="false"
+                                android:clickable="true" android:focusable="true"
+                                android:tag="200flat"/>
+                        </LinearLayout>
+
+                        <TextView android:id="@+id/tvPromoBadge"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="✓ Promo applied!"
+                            android:textColor="@color/checkout_green_save" android:textSize="11sp"
+                            android:visibility="gone"/>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Reward Points" style="@style/checkout_SectionLabelStyle"/>
+                            <TextView android:id="@+id/tvAvailablePoints" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Available: 300" android:textColor="@color/checkout_gold" android:textSize="12sp" android:layout_marginEnd="12dp"/>
+
+                            <!-- Stepper: [ – ]  0  [ + ] -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:background="@drawable/checkout_bg_section_icon"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp">
+
+                                <ImageButton
+                                    android:id="@+id/btnRewardMinus"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:src="@drawable/ic_minus"
+                                    android:tint="@color/checkout_gold"
+                                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                                <TextView
+                                    android:id="@+id/tvRewardPointsApplied"
+                                    android:layout_width="36dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="@color/checkout_text_primary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:gravity="center" />
+
+                                <ImageButton
+                                    android:id="@+id/btnRewardPlus"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:src="@android:drawable/ic_input_add"
+                                    android:tint="@color/checkout_gold"
+                                    android:background="?attr/selectableItemBackgroundBorderless" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- END PROMOS SECTION -->
+
+                <!-- ===== ADD-ONS SECTION ===== -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/checkout_bg_card"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/addonHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <TextView android:layout_width="42dp" android:layout_height="42dp"
+                            android:background="@drawable/checkout_bg_section_icon" android:text="✨"
+                            android:textSize="22sp" android:gravity="center" android:includeFontPadding="false"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="ADD-ONS" style="@style/checkout_SectionLabelStyle"/>
+                            <TextView android:id="@+id/tvAddonHeaderSub" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Spa + Breakfast selected" android:textColor="@color/checkout_text_secondary" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/addonChevron" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="›" android:textColor="@color/checkout_gold" android:textSize="20sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/addonBody"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:padding="12dp">
+
+                        <!-- Row 1 -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_marginBottom="8dp">
+                            <LinearLayout android:id="@+id/addonSpa"
+                                android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1"
+                                android:orientation="vertical" android:padding="10dp"
+                                android:background="@drawable/checkout_bg_addon_selected"
+                                android:layout_marginEnd="6dp" android:clickable="true" android:focusable="true"
+                                android:tag="selected">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💆" android:textSize="20sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aroma Spa" android:textColor="@color/checkout_text_primary" android:textSize="12sp" android:textStyle="bold"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+₹899" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                            </LinearLayout>
+                            <LinearLayout android:id="@+id/addonBreakfast"
+                                android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1"
+                                android:orientation="vertical" android:padding="10dp"
+                                android:background="@drawable/checkout_bg_addon_selected"
+                                android:layout_marginStart="6dp" android:clickable="true" android:focusable="true"
+                                android:tag="selected">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🍳" android:textSize="20sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Breakfast" android:textColor="@color/checkout_text_primary" android:textSize="12sp" android:textStyle="bold"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+₹300/person" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- Row 2 -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_marginBottom="8dp">
+                            <LinearLayout android:id="@+id/addonTransfer"
+                                android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1"
+                                android:orientation="vertical" android:padding="10dp"
+                                android:background="@drawable/checkout_bg_addon"
+                                android:layout_marginEnd="6dp" android:clickable="true" android:focusable="true"
+                                android:tag="unselected">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🚗" android:textSize="20sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Airport Transfer" android:textColor="@color/checkout_text_primary" android:textSize="12sp" android:textStyle="bold"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+₹650" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                            </LinearLayout>
+                            <LinearLayout android:id="@+id/addonTour"
+                                android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1"
+                                android:orientation="vertical" android:padding="10dp"
+                                android:background="@drawable/checkout_bg_addon"
+                                android:layout_marginStart="6dp" android:clickable="true" android:focusable="true"
+                                android:tag="unselected">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏛️" android:textSize="20sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="City Tour Guide" android:textColor="@color/checkout_text_primary" android:textSize="12sp" android:textStyle="bold"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+₹500" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- Row 3 -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <LinearLayout android:id="@+id/addonAdventure"
+                                android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1"
+                                android:orientation="vertical" android:padding="10dp"
+                                android:background="@drawable/checkout_bg_addon"
+                                android:layout_marginEnd="6dp" android:clickable="true" android:focusable="true"
+                                android:tag="unselected">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⛺" android:textSize="20sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Adventure Kit" android:textColor="@color/checkout_text_primary" android:textSize="12sp" android:textStyle="bold"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+₹420" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                            </LinearLayout>
+                            <LinearLayout android:id="@+id/addonPhoto"
+                                android:layout_width="0dp" android:layout_height="80dp" android:layout_weight="1"
+                                android:orientation="vertical" android:padding="10dp"
+                                android:background="@drawable/checkout_bg_addon"
+                                android:layout_marginStart="6dp" android:clickable="true" android:focusable="true"
+                                android:tag="unselected">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📷" android:textSize="20sp"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Photo Session" android:textColor="@color/checkout_text_primary" android:textSize="12sp" android:textStyle="bold"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+₹199" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- END ADD-ONS SECTION -->
+
+                <!-- ===== PRICE SUMMARY ===== -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/checkout_bg_card"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="14dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PRICE BREAKDOWN" style="@style/checkout_SectionLabelStyle"
+                        android:layout_marginBottom="10dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                        <TextView android:id="@+id/tvPriceBaseLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Room (3 nights × 2)" android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvPriceBaseValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹7,990" android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Add-ons" android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvAddonTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹1,199" android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/discountRow" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp" android:visibility="gone">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Promo discount" android:textColor="@color/checkout_green_save" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvDiscountAmt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-₹0" android:textColor="@color/checkout_green_save" android:textSize="13sp"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/rewardDiscountRow" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp" android:visibility="gone">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Reward points used" android:textColor="@color/checkout_green_save" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvRewardDiscountAmt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-₹0" android:textColor="@color/checkout_green_save" android:textSize="13sp"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider" android:layout_marginTop="6dp" android:layout_marginBottom="6dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Subtotal" android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvSubtotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹9,189" android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Taxes (18% GST)" android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvTax" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹1,654" android:textColor="@color/checkout_text_secondary" android:textSize="13sp"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider" android:layout_marginBottom="8dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Total" android:textColor="@color/checkout_white" android:textSize="15sp" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹10,843" android:textColor="@color/checkout_white" android:textSize="15sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- END PRICE SUMMARY -->
+
+            </LinearLayout>
+            <!-- END single ScrollView child -->
+
+        </ScrollView>
+
+
+
+        <!-- CTA Button -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/checkout_bg_dark" android:padding="12dp">
+            <Button
+                android:id="@+id/btnProceedConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Proceed to confirm booking"
+                android:textColor="@color/checkout_bg_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/checkout_bg_button_gold"
+                android:stateListAnimator="@null"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

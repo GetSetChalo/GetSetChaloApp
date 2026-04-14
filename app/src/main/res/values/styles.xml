@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MatApp22.Checkout" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/checkout_gold</item>
+        <item name="colorPrimaryVariant">@color/checkout_gold_dark</item>
+        <item name="colorOnPrimary">@color/checkout_bg_dark</item>
+        <item name="android:windowBackground">@color/checkout_bg_dark</item>
+        <item name="android:statusBarColor">@color/checkout_status_bar</item>
+        <item name="android:navigationBarColor">@color/checkout_bg_dark</item>
+        <item name="android:textColorHint">@color/checkout_text_hint</item>
+        <!-- Prevent Material3 from applying surface-color tints/overlays over our custom colors -->
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+
+    <style name="checkout_SectionLabelStyle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/checkout_gold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="checkout_FieldLabelStyle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/checkout_gold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+    <style name="mat_cityItem">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:background">@color/mat_gridButtons</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    <style name="mat_navBtn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="mat_cityListItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">#FFC107</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+    <style name="mat_cityDividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="android:background">#B39DDB</item>
+    </style>
+</resources>

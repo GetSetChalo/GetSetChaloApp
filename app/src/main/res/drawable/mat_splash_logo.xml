@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    GetSetChalo — Splash Logo
+    ORIGINAL code kept exactly as-is.
+    Only addition: accurate India map outline inside the purple disc.
+    Place in: res/drawable/splash_logo.xml
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="130dp"
+    android:height="130dp"
+    android:viewportWidth="118"
+    android:viewportHeight="118">
+
+    <!-- Outer gold ring (ORIGINAL) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#F9A01B"
+        android:strokeWidth="2.5"
+        android:pathData="M59,3 A56,56 0 1,1 58.99,3 Z" />
+
+    <!-- 8 Lotus petals + ring dots (ORIGINAL — every line unchanged) -->
+    <group android:pivotX="59" android:pivotY="59">
+        <path android:fillColor="#F9A01B" android:fillAlpha="0.15"
+            android:pathData="M59,6 C55,6 53,11 53,17 C53,23 55,28 59,28 C63,28 65,23 65,17 C65,11 63,6 59,6 Z"/>
+        <group android:rotation="45" android:pivotX="59" android:pivotY="59">
+            <path android:fillColor="#F9A01B" android:fillAlpha="0.15"
+                android:pathData="M59,6 C55,6 53,11 53,17 C53,23 55,28 59,28 C63,28 65,23 65,17 C65,11 63,6 59,6 Z"/>
+        </group>
+        <group android:rotation="90" android:pivotX="59" android:pivotY="59">
+            <path android:fillColor="#F9A01B" android:fillAlpha="0.15"
+                android:pathData="M59,6 C55,6 53,11 53,17 C53,23 55,28 59,28 C63,28 65,23 65,17 C65,11 63,6 59,6 Z"/>
+        </group>
+        <group android:rotation="135" android:pivotX="59" android:pivotY="59">
+            <path android:fillColor="#F9A01B" android:fillAlpha="0.15"
+                android:pathData="M59,6 C55,6 53,11 53,17 C53,23 55,28 59,28 C63,28 65,23 65,17 C65,11 63,6 59,6 Z"/>
+        </group>
+        <group android:rotation="180" android:pivotX="59" android:pivotY="59">
+            <path android:fillColor="#F9A01B" android:fillAlpha="0.15"
+                android:pathData="M59,6 C55,6 53,11 53,17 C53,23 55,28 59,28 C63,28 65,23 65,17 C65,11 63,6 59,6 Z"/>
+        </group>
+        <group android:rotation="225" android:pivotX="59" android:pivotY="59">
+            <path android:fillColor="#F9A01B" android:fillAlpha="0.15"
+                android:pathData="M59,6 C55,6 53,11 53,17 C53,23 55,28 59,28 C63,28 65,23 65,17 C65,11 63,6 59,6 Z"/>
+        </group>
+        <group android:rotation="270" android:pivotX="59" android:pivotY="59">
+            <path android:fillColor="#F9A01B" android:fillAlpha="0.15"
+                android:pathData="M59,6 C55,6 53,11 53,17 C53,23 55,28 59,28 C63,28 65,23 65,17 C65,11 63,6 59,6 Z"/>
+        </group>
+        <group android:rotation="315" android:pivotX="59" android:pivotY="59">
+            <path android:fillColor="#F9A01B" android:fillAlpha="0.15"
+                android:pathData="M59,6 C55,6 53,11 53,17 C53,23 55,28 59,28 C63,28 65,23 65,17 C65,11 63,6 59,6 Z"/>
+        </group>
+        <group>
+            <path android:fillColor="#FFD700" android:pathData="M59,11 A2.5,2.5 0 1,1 58.99,11 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M76,13.5 A2.5,2.5 0 1,1 75.99,13.5 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M90,22 A2.5,2.5 0 1,1 89.99,22 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M99,35 A2.5,2.5 0 1,1 98.99,35 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M104,50 A2.5,2.5 0 1,1 103.99,50 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M104,68 A2.5,2.5 0 1,1 103.99,68 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M99,83 A2.5,2.5 0 1,1 98.99,83 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M90,96 A2.5,2.5 0 1,1 89.99,96 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M76,104.5 A2.5,2.5 0 1,1 75.99,104.5 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M59,107 A2.5,2.5 0 1,1 58.99,107 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M42,104.5 A2.5,2.5 0 1,1 41.99,104.5 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M28,96 A2.5,2.5 0 1,1 27.99,96 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M19,83 A2.5,2.5 0 1,1 18.99,83 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M14,68 A2.5,2.5 0 1,1 13.99,68 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M14,50 A2.5,2.5 0 1,1 13.99,50 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M19,35 A2.5,2.5 0 1,1 18.99,35 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M28,22 A2.5,2.5 0 1,1 27.99,22 Z"/>
+            <path android:fillColor="#FFD700" android:pathData="M42,13.5 A2.5,2.5 0 1,1 41.99,13.5 Z"/>
+        </group>
+    </group>
+
+    <!-- Inner purple disc (ORIGINAL) -->
+    <path
+        android:fillColor="#1B0044"
+        android:strokeColor="#F9A01B"
+        android:strokeWidth="1.5"
+        android:pathData="M59,29 A30,30 0 1,1 58.99,29 Z"/>
+
+    <!-- TAJ MAHAL SILHOUETTE (gold/saffron) -->
+
+    <!-- Left minaret body -->
+    <path android:fillColor="#FF9500"
+        android:pathData="M37,51 C34.8,51 33,52 33,53.5 L33,72 C33,73.5 34.8,74.5 37,74.5 C39.2,74.5 41,73.5 41,72 L41,53.5 C41,52 39.2,51 37,51 Z"/>
+    <!-- Left minaret dome -->
+    <path android:fillColor="#FFD700"
+        android:pathData="M37,47.5 C34,47.5 32,49 32,51 C32,53 34,54.5 37,54.5 C40,54.5 42,53 42,51 C42,49 40,47.5 37,47.5 Z"/>
+    <!-- Left minaret finial -->
+    <path android:fillColor="#FFD700"
+        android:pathData="M36,44 L38,44 L38,48 L36,48 Z"/>
+    <path android:fillColor="#FFD700"
+        android:pathData="M37,42 A2,2 0 1,1 36.99,42 Z"/>
+
+    <!-- Right minaret body -->
+    <path android:fillColor="#FF9500"
+        android:pathData="M81,51 C78.8,51 77,52 77,53.5 L77,72 C77,73.5 78.8,74.5 81,74.5 C83.2,74.5 85,73.5 85,72 L85,53.5 C85,52 83.2,51 81,51 Z"/>
+    <!-- Right minaret dome -->
+    <path android:fillColor="#FFD700"
+        android:pathData="M81,47.5 C78,47.5 76,49 76,51 C76,53 78,54.5 81,54.5 C84,54.5 86,53 86,51 C86,49 84,47.5 81,47.5 Z"/>
+    <!-- Right minaret finial -->
+    <path android:fillColor="#FFD700"
+        android:pathData="M80,44 L82,44 L82,48 L80,48 Z"/>
+    <path android:fillColor="#FFD700"
+        android:pathData="M81,42 A2,2 0 1,1 80.99,42 Z"/>
+
+    <!-- Main Taj body / plinth -->
+    <path android:fillColor="#FF9500"
+        android:pathData="M44,57 L44,72 L74,72 L74,57 Z"/>
+
+    <!-- Central arch (cutout) -->
+    <path android:fillColor="#180040"
+        android:pathData="M53,57 C53,57 53,50 59,50 C65,50 65,57 65,57 Z"/>
+    <!-- Arch rect below -->
+    <path android:fillColor="#180040"
+        android:pathData="M53,57 L65,57 L65,65 L53,65 Z"/>
+
+    <!-- Central dome (shifted further down) -->
+    <path android:fillColor="#FFD700"
+        android:pathData="M59,42 C54,42 50,46 50,51 C50,56 54,60 59,60 C64,60 68,56 68,51 C68,46 64,42 59,42 Z"/>
+
+    <!-- Central finial (shifted accordingly) -->
+    <path android:fillColor="#FFD700"
+        android:pathData="M58,35 L60,35 L60,43 L58,43 Z"/>
+    <path android:fillColor="#FFD700"
+        android:pathData="M59,33 A2.5,2.5 0 1,1 58.99,33 Z"/>
+
+    <!-- 🔥 UPDATED PLATFORM BASE (covers minarets fully) -->
+    <path android:fillColor="#FFD700"
+        android:pathData="M30,72 L88,72 L88,76 L30,76 Z"/>
+
+</vector>

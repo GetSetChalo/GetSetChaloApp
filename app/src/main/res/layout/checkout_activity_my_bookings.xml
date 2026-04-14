@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/checkout_bg_dark">
+
+
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:background="@color/checkout_bg_header" android:orientation="horizontal"
+        android:gravity="center" android:paddingStart="16dp" android:paddingEnd="16dp">
+        <ImageButton android:id="@+id/btnBack"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:background="@drawable/checkout_bg_back_btn_gold"
+            android:src="@drawable/checkout_ic_arrow_back"
+            android:scaleType="center"
+            android:padding="8dp"
+            android:stateListAnimator="@null"
+            android:contentDescription="Back" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="MY BOOKINGS"
+            android:textColor="@color/checkout_gold" android:textSize="17sp"
+            android:textStyle="bold" android:gravity="center"
+            android:layout_marginEnd="36dp"/>
+    </LinearLayout>
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/emptyState"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🧳"
+            android:textSize="60sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Bookings Yet"
+            android:textColor="@color/checkout_gold"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your confirmed trips will appear here."
+            android:textColor="@color/checkout_text_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDeals"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="12dp"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/checkout_bg_dark">
+
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+        android:background="@color/checkout_bg_header" android:orientation="horizontal"
+        android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp">
+        <ImageButton android:id="@+id/btnProfileBack"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:background="@drawable/checkout_bg_back_btn_gold"
+            android:src="@drawable/checkout_ic_arrow_back"
+            android:scaleType="center"
+            android:padding="8dp"
+            android:stateListAnimator="@null"
+            android:contentDescription="Back" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="My Profile"
+            android:textColor="@color/checkout_white" android:textSize="17sp"
+            android:textStyle="bold" android:gravity="center"
+            android:layout_marginEnd="36dp"/>
+    </LinearLayout>
+
+    <!-- Profile Hero -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/checkout_bg_header" android:orientation="horizontal"
+        android:gravity="center_vertical" android:padding="16dp" android:paddingBottom="20dp">
+        <TextView
+            android:id="@+id/tvProfileInitial"
+            android:layout_width="56dp" android:layout_height="56dp"
+            android:background="@drawable/checkout_bg_profile_avatar"
+            android:text="?" android:textColor="@color/checkout_bg_dark"
+            android:textSize="22sp" android:textStyle="bold" android:gravity="center"/>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Loading..." android:textColor="@color/checkout_white"
+                android:textSize="16sp" android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvProfileEmail"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text=" " android:textColor="@color/checkout_text_secondary"
+                android:textSize="11sp" android:layout_marginTop="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="⭐ Gold Traveller"
+                android:textColor="@color/checkout_gold" android:textSize="11sp"
+                android:background="@drawable/checkout_bg_gold_badge"
+                android:paddingStart="8dp" android:paddingEnd="8dp"
+                android:paddingTop="3dp" android:paddingBottom="3dp"
+                android:layout_marginTop="6dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingBottom="24dp">
+
+            <!-- ACCOUNT section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ACCOUNT" style="@style/checkout_SectionLabelStyle"
+                android:layout_marginStart="16dp" android:layout_marginTop="18dp" android:layout_marginBottom="6dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/checkout_bg_card"
+                android:layout_marginStart="12dp" android:layout_marginEnd="12dp">
+
+                <LinearLayout
+                    android:id="@+id/rowPersonalDetails"
+                    android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="👤" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Personal Details" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/checkout_gold" android:textSize="18sp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider"/>
+
+
+                <LinearLayout android:id="@+id/rowRewardPoints" android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="✨" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Reward Points" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <TextView android:id="@+id/tvProfileRewardPoints" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="300 pts" android:textColor="@color/checkout_text_secondary" android:textSize="11sp" android:layout_marginEnd="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/checkout_gold" android:textSize="18sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- PREFERENCES section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PREFERENCES" style="@style/checkout_SectionLabelStyle"
+                android:layout_marginStart="16dp" android:layout_marginTop="18dp" android:layout_marginBottom="6dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/checkout_bg_card"
+                android:layout_marginStart="12dp" android:layout_marginEnd="12dp">
+
+
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="💰" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Currency" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="INR ₹" android:textColor="@color/checkout_text_secondary" android:textSize="11sp" android:layout_marginEnd="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/checkout_gold" android:textSize="18sp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="🔔" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Notifications" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchNotif"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:thumbTint="@color/checkout_gold"
+                        android:trackTint="@color/checkout_gold_dark"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="🌙" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Dark Mode" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchDarkMode"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:thumbTint="@color/checkout_gold"
+                        android:trackTint="@color/checkout_gold_dark"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SECURITY section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SECURITY" style="@style/checkout_SectionLabelStyle"
+                android:layout_marginStart="16dp" android:layout_marginTop="18dp" android:layout_marginBottom="6dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/checkout_bg_card"
+                android:layout_marginStart="12dp" android:layout_marginEnd="12dp">
+
+                <LinearLayout
+                    android:id="@+id/rowPasswordSecurity"
+                    android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="🔐" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Password &amp; Security" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Updated 2mo ago" android:textColor="@color/checkout_text_secondary" android:textSize="11sp" android:layout_marginEnd="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/checkout_gold" android:textSize="18sp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="👁" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Biometric Login" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchBiometric"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:thumbTint="@color/checkout_gold"
+                        android:trackTint="@color/checkout_gold_dark"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="🔗" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Linked Accounts" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Google" android:textColor="@color/checkout_text_secondary" android:textSize="11sp" android:layout_marginEnd="6dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/checkout_gold" android:textSize="18sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SUPPORT section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SUPPORT &amp; INFO" style="@style/checkout_SectionLabelStyle"
+                android:layout_marginStart="16dp" android:layout_marginTop="18dp" android:layout_marginBottom="6dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/checkout_bg_card"
+                android:layout_marginStart="12dp" android:layout_marginEnd="12dp">
+
+                <LinearLayout
+                    android:id="@+id/rowHelpSupport"
+                    android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="💬" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Help &amp; Support" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/checkout_gold" android:textSize="18sp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider"/>
+
+                <LinearLayout
+                    android:id="@+id/rowPrivacyPolicy"
+                    android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp"
+                    android:clickable="true" android:focusable="true">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="📄" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Privacy Policy" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/checkout_gold" android:textSize="18sp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/checkout_divider"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
+                    <TextView android:layout_width="34dp" android:layout_height="34dp" android:background="@drawable/checkout_bg_section_icon" android:text="🚀" android:textSize="16sp" android:gravity="center"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="App Version" android:textColor="@color/checkout_text_primary" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4.9.5" android:textColor="@color/checkout_text_secondary" android:textSize="11sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Logout -->
+            <Button android:id="@+id/btnLogout"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:layout_marginStart="12dp" android:layout_marginEnd="12dp" android:layout_marginTop="18dp"
+                android:text="🔒  Log Out"
+                android:textColor="@color/checkout_red_logout" android:textSize="14sp"
+                android:background="@drawable/checkout_bg_logout_btn"
+                android:stateListAnimator="@null"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="GetSetChalo · Made with ❤ in India"
+                android:textColor="@color/checkout_text_hint" android:textSize="10sp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

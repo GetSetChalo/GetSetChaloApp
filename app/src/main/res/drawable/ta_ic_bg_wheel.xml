@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="600dp"
+    android:height="600dp"
+    android:viewportWidth="600"
+    android:viewportHeight="600">
+
+    <!-- Center of circle: cx=300, cy=300 -->
+
+    <!-- ══ Outermost thin ring ══ -->
+    <path
+        android:strokeColor="#40F5A623"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M300,300 m-280,0 a280,280 0 1,0 560,0 a280,280 0 1,0 -560,0" />
+
+    <!-- ══ Second decorative ring ══ -->
+    <path
+        android:strokeColor="#30F5A623"
+        android:strokeWidth="1.5"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M300,300 m-260,0 a260,260 0 1,0 520,0 a260,260 0 1,0 -520,0" />
+
+    <!-- ══ 24 outer petal / arch shapes around the big ring ══ -->
+    <!-- Petal 1 -->
+    <path android:fillColor="#20F5A623" android:pathData="M300,22 C310,22 318,30 318,40 C318,50 310,58 300,58 C290,58 282,50 282,40 C282,30 290,22 300,22Z" />
+    <!-- Petal 2 -->
+    <path android:fillColor="#20F5A623" android:pathData="M378,22 C388,22 396,30 396,40 C396,50 388,58 378,58 C368,58 360,50 360,40 C360,30 368,22 378,22Z" />
+    <!-- Petal 3 -->
+    <path android:fillColor="#20F5A623" android:pathData="M444,60 C454,60 462,68 462,78 C462,88 454,96 444,96 C434,96 426,88 426,78 C426,68 434,60 444,60Z" />
+    <!-- Petal 4 -->
+    <path android:fillColor="#20F5A623" android:pathData="M480,128 C490,128 498,136 498,146 C498,156 490,164 480,164 C470,164 462,156 462,146 C462,136 470,128 480,128Z" />
+    <!-- Petal 5 (right) -->
+    <path android:fillColor="#20F5A623" android:pathData="M500,205 C510,205 518,213 518,223 C518,233 510,241 500,241 C490,241 482,233 482,223 C482,213 490,205 500,205Z" />
+    <!-- Petal 6 -->
+    <path android:fillColor="#20F5A623" android:pathData="M500,360 C510,360 518,368 518,378 C518,388 510,396 500,396 C490,396 482,388 482,378 C482,368 490,360 500,360Z" />
+    <!-- Petal 7 -->
+    <path android:fillColor="#20F5A623" android:pathData="M480,436 C490,436 498,444 498,454 C498,464 490,472 480,472 C470,472 462,464 462,454 C462,444 470,436 480,436Z" />
+    <!-- Petal 8 -->
+    <path android:fillColor="#20F5A623" android:pathData="M444,504 C454,504 462,512 462,522 C462,532 454,540 444,540 C434,540 426,532 426,522 C426,512 434,504 444,504Z" />
+    <!-- Petal 9 -->
+    <path android:fillColor="#20F5A623" android:pathData="M378,542 C388,542 396,550 396,560 C396,570 388,578 378,578 C368,578 360,570 360,560 C360,550 368,542 378,542Z" />
+    <!-- Petal 10 (bottom) -->
+    <path android:fillColor="#20F5A623" android:pathData="M300,542 C310,542 318,550 318,560 C318,570 310,578 300,578 C290,578 282,570 282,560 C282,550 290,542 300,542Z" />
+    <!-- Petal 11 -->
+    <path android:fillColor="#20F5A623" android:pathData="M222,542 C232,542 240,550 240,560 C240,570 232,578 222,578 C212,578 204,570 204,560 C204,550 212,542 222,542Z" />
+    <!-- Petal 12 -->
+    <path android:fillColor="#20F5A623" android:pathData="M156,504 C166,504 174,512 174,522 C174,532 166,540 156,540 C146,540 138,532 138,522 C138,512 146,504 156,504Z" />
+    <!-- Petal 13 (left) -->
+    <path android:fillColor="#20F5A623" android:pathData="M100,436 C110,436 118,444 118,454 C118,464 110,472 100,472 C90,472 82,464 82,454 C82,444 90,436 100,436Z" />
+    <!-- Petal 14 -->
+    <path android:fillColor="#20F5A623" android:pathData="M82,360 C92,360 100,368 100,378 C100,388 92,396 82,396 C72,396 64,388 64,378 C64,368 72,360 82,360Z" />
+    <!-- Petal 15 -->
+    <path android:fillColor="#20F5A623" android:pathData="M82,205 C92,205 100,213 100,223 C100,233 92,241 82,241 C72,241 64,233 64,223 C64,213 72,205 82,205Z" />
+    <!-- Petal 16 -->
+    <path android:fillColor="#20F5A623" android:pathData="M100,128 C110,128 118,136 118,146 C118,156 110,164 100,164 C90,164 82,156 82,146 C82,136 90,128 100,128Z" />
+    <!-- Petal 17 -->
+    <path android:fillColor="#20F5A623" android:pathData="M156,60 C166,60 174,68 174,78 C174,88 166,96 156,96 C146,96 138,88 138,78 C138,68 146,60 156,60Z" />
+    <!-- Petal 18 -->
+    <path android:fillColor="#20F5A623" android:pathData="M222,22 C232,22 240,30 240,40 C240,50 232,58 222,58 C212,58 204,50 204,40 C204,30 212,22 222,22Z" />
+
+    <!-- ══ 24 Spokes radiating from center ══ -->
+    <!-- Vertical -->
+    <path android:strokeColor="#35F5A623" android:strokeWidth="1.5" android:fillColor="@android:color/transparent" android:pathData="M300,60 L300,540" />
+    <!-- Horizontal -->
+    <path android:strokeColor="#35F5A623" android:strokeWidth="1.5" android:fillColor="@android:color/transparent" android:pathData="M60,300 L540,300" />
+    <!-- diagonal 45° -->
+    <path android:strokeColor="#25F5A623" android:strokeWidth="1" android:fillColor="@android:color/transparent" android:pathData="M102,102 L498,498" />
+    <path android:strokeColor="#25F5A623" android:strokeWidth="1" android:fillColor="@android:color/transparent" android:pathData="M498,102 L102,498" />
+    <!-- 22.5° spokes -->
+    <path android:strokeColor="#18F5A623" android:strokeWidth="1" android:fillColor="@android:color/transparent" android:pathData="M160,65 L440,535" />
+    <path android:strokeColor="#18F5A623" android:strokeWidth="1" android:fillColor="@android:color/transparent" android:pathData="M440,65 L160,535" />
+    <path android:strokeColor="#18F5A623" android:strokeWidth="1" android:fillColor="@android:color/transparent" android:pathData="M65,160 L535,440" />
+    <path android:strokeColor="#18F5A623" android:strokeWidth="1" android:fillColor="@android:color/transparent" android:pathData="M65,440 L535,160" />
+
+    <!-- ══ Mid ring ══ -->
+    <path
+        android:strokeColor="#28F5A623"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M300,300 m-190,0 a190,190 0 1,0 380,0 a190,190 0 1,0 -380,0" />
+
+    <!-- ══ Inner ring  ══ -->
+    <path
+        android:strokeColor="#30F5A623"
+        android:strokeWidth="2.5"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M300,300 m-120,0 a120,120 0 1,0 240,0 a120,120 0 1,0 -240,0" />
+
+    <!-- ══ Inner decorative ring ══ -->
+    <path
+        android:strokeColor="#20F5A623"
+        android:strokeWidth="1"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M300,300 m-100,0 a100,100 0 1,0 200,0 a100,100 0 1,0 -200,0" />
+
+    <!-- ══ 12 inner petal arcs between rings ══ -->
+    <!-- These arcs sit between the mid ring and inner ring -->
+    <path android:fillColor="#15F5A623" android:pathData="M300,115 C320,115 336,131 336,151 C336,171 320,187 300,187 C280,187 264,171 264,151 C264,131 280,115 300,115Z" />
+    <path android:fillColor="#15F5A623" android:pathData="M413,151 C433,151 449,167 449,187 C449,207 433,223 413,223 C393,223 377,207 377,187 C377,167 393,151 413,151Z" />
+    <path android:fillColor="#15F5A623" android:pathData="M449,264 C469,264 485,280 485,300 C485,320 469,336 449,336 C429,336 413,320 413,300 C413,280 429,264 449,264Z" />
+    <path android:fillColor="#15F5A623" android:pathData="M413,377 C433,377 449,393 449,413 C449,433 433,449 413,449 C393,449 377,433 377,413 C377,393 393,377 413,377Z" />
+    <path android:fillColor="#15F5A623" android:pathData="M300,413 C320,413 336,429 336,449 C336,469 320,485 300,485 C280,485 264,469 264,449 C264,429 280,413 300,413Z" />
+    <path android:fillColor="#15F5A623" android:pathData="M187,377 C207,377 223,393 223,413 C223,433 207,449 187,449 C167,449 151,433 151,413 C151,393 167,377 187,377Z" />
+    <path android:fillColor="#15F5A623" android:pathData="M151,264 C171,264 187,280 187,300 C187,320 171,336 151,336 C131,336 115,320 115,300 C115,280 131,264 151,264Z" />
+    <path android:fillColor="#15F5A623" android:pathData="M187,151 C207,151 223,167 223,187 C223,207 207,223 187,223 C167,223 151,207 151,187 C151,167 167,151 187,151Z" />
+
+    <!-- ══ Center hub circle ══ -->
+    <path
+        android:fillColor="#20F5A623"
+        android:pathData="M300,300 m-30,0 a30,30 0 1,0 60,0 a30,30 0 1,0 -60,0" />
+
+    <path
+        android:fillColor="#30F5A623"
+        android:pathData="M300,300 m-15,0 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0" />
+
+</vector>

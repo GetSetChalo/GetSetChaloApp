@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mat_primary">
+
+    <!--    HEADER CONTAINER-->
+    <LinearLayout
+        android:id="@+id/mat_headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/mat_primary"
+        android:orientation="vertical"
+        android:elevation="4dp"
+        android:paddingBottom="10dp">
+
+        <!--        APP NAME-->
+        <TextView
+            android:id="@+id/mat_homeAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:alpha="1"
+            android:fontFamily="@font/mat_yatra_one"
+            android:letterSpacing="0.05"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <!--        GREETINGS-->
+        <TextView
+            android:id="@+id/mat_greetingText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="22dp"
+            android:text="Hey, Traveller! 👋"
+            android:textColor="@color/mat_textPrimary"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp" />
+
+        <TextView
+            android:id="@+id/mat_greetingText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="6dp"
+            android:text="Where to next?"
+            android:fontFamily="serif"
+            android:textColor="@color/mat_textPrimary"
+            android:textSize="25dp"
+            android:lineSpacingExtra="4dp"
+            android:textStyle="bold" />
+
+        <!--        SEARCH BAR-->
+        <EditText
+            android:id="@+id/mat_searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/mat_search_bar_bg"
+            android:hint="Search a city..."
+            android:padding="12dp"
+            android:textColor="@color/mat_textPrimary"
+            android:textColorHint="@color/mat_textSecondary"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--SEARCH RESULTS-->
+            <LinearLayout
+                android:id="@+id/mat_searchResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@color/mat_cardBg"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <!--            TOP BUTTONS-->
+            <LinearLayout
+                android:id="@+id/mat_topButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="235dp"
+                android:layout_marginHorizontal="18dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/mat_recentBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/mat_button_card_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="Recently Visited"
+                        android:textAlignment="center"
+                        android:textColor="@color/mat_accent"
+                        android:textSize="13sp"
+                        android:maxLines="1"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/mat_baseline_access_time_24"
+                        android:tint="@color/mat_accent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_favBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/mat_button_card_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Favourites"
+                        android:textAlignment="center"
+                        android:textColor="@color/mat_accent"
+                        android:textSize="13sp"
+                        android:maxLines="1"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/mat_outline_bookmark_heart_24"
+                        android:tint="@color/mat_accent" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            POPULAR CITIES TITLE-->
+            <TextView
+                android:id="@+id/mat_popularCitiesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:letterSpacing="0.15"
+                android:text="✨POPULAR CITIES:"
+                android:textColor="@color/mat_textSecondary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!--            POPULAR CITIES GRID-->
+            <GridLayout
+                android:id="@+id/mat_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:columnCount="4"
+                android:padding="10dp">
+
+                <!--                CLICKABLE CITIES 1-5-->
+                <LinearLayout
+                    android:id="@+id/mat_goa"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_goa" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Goa" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_varanasi"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_varanasi" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Varanasi" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_jaipur"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_jaipur" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Jaipur" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_agra"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_agra" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Agra" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_chennai"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_chennai" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Chennai" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!--                NON-CLICKABLE CITIES 6-20-->
+
+                <LinearLayout
+                    android:id="@+id/mat_gangtok"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_gangtok" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Gangtok" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_delhi"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_delhi" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Delhi" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_bengaluru"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_bengaluru" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Bengaluru" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="15dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_hyderabad"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_hyderababd" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Hyderabad" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="14dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_kolkata"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_kolkata" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Kolkata" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_koch"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_kochi" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Kochi" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_manali"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_manali" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Manali" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_ooty"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_ooty" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Ooty" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_puri"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_puri" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Puri" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_amritsar"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_amritsar" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Amritsar" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_mysore"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_mysore" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Mysore" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_tirupati"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_tirupati" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Tirupati" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_hampi"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_hampi" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Hampi" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_shillong"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_shillong" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Shillong" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="16dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mat_ahmedabad"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/mat_grid_item_bg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView android:layout_width="70dp" android:layout_height="50dp" android:src="@drawable/mat_ic_ahmedabad" android:layout_marginTop="4dp"/>
+                    <TextView android:layout_width="70dp" android:layout_height="20dp" android:text="Ahmedabad" android:textAlignment="center" android:textColor="@color/mat_textPrimary" android:textSize="13dp" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+            </GridLayout>
+
+            <!--            OTHER CITIES-->
+            <TextView
+                android:id="@+id/mat_otherCitiesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✈️ OTHER CITIES:"
+                android:textColor="#FFC107"
+                android:textSize="16sp"
+                android:letterSpacing="0.15"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="2dp"/>
+
+            <!--            OTHER CITIES LIST -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/mat_bhopal"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Bhopal" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_bhubaneswar"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Bhubaneswar" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_coimbatore"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Coimbatore" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_cuttack"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Cuttack" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_dehradun"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Dehradun" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_gwalior"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Gwalior" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_guntur"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Guntur" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_indore"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Indore" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_jodhpur"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Jodhpur" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_kanpur"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Kanpur" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_kolhapur"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Kolhapur" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_kota"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Kota" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_lucknow"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Lucknow" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_ludhiana"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Ludhiana" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_madurai"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Madurai" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_mangalore"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Mangalore" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_nagpur"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Nagpur" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_nashik"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Nashik" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_patna"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Patna" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_pondicherry"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Pondicherry" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_pune"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Pune" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_raipur"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Raipur" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_ranchi"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Ranchi" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_surat"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Surat" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_srinagar"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Srinagar" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_thiruvananthapuram"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Trivandrum" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_trichy"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Trichy" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_udaipur"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Udaipur" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_vadodara"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Vadodara" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+                <TextView
+                    android:id="@+id/mat_visakhapatnam"
+                    style="@style/mat_cityListItemStyle"
+                    android:text="Vizag" />
+                <View
+                    style="@style/mat_cityDividerStyle" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

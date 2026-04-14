@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_summary_row.xml
+    A reusable two-line row: purple label on top, white/cream value below.
+    Used inside the BookingSummaryActivity card for each booking field.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_row_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/hd_gold"
+        android:textSize="11sp"
+        android:letterSpacing="0.10"
+        android:textAllCaps="true"
+        tools:text="HOTEL" />
+
+    <TextView
+        android:id="@+id/tv_row_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/hd_text_main"
+        android:textSize="15sp"
+        android:lineSpacingMultiplier="1.2"
+        tools:text="Umaid Bhawan Palace" />
+
+</LinearLayout>

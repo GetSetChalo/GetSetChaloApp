@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/checkout_bg_modal"
+    android:padding="28dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🏆"
+        android:textSize="42sp"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Successful!"
+        android:textColor="@color/checkout_white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvSuccessMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your trip to Agra is confirmed.\nCheck your email for the itinerary."
+        android:textColor="@color/checkout_text_secondary"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginBottom="22dp"/>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:text="Done"
+        android:textColor="@color/checkout_bg_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/checkout_bg_button_gold"
+        android:stateListAnimator="@null"/>
+
+</LinearLayout>
