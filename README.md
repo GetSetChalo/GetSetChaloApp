@@ -73,7 +73,7 @@ To run this project, you must insert your own API keys:
 3.  **Console Settings:** 
     - Go to **Authentication** > **Sign-in Method**.
     - **Enable Email/Password** to ensure the login/register pages work perfectly.
-    - Enable **Cloud Firestore** to store Reward Logs and User Favorites.
+    - Enable **Cloud Firestore** to store user details.
 
 ---
 
