@@ -79,19 +79,19 @@ To run this project, you must insert your own API keys:
 
 ## 👥 Meet the Team
 
-**Samriddh Anand**, #TheCuratorOfQuests
+**Samriddh Anand**, #TheCuratorOfQuests                          
 **Role** - Tourist Packages Feature
 
-**Sara Deshpande**, #TheCloser
+**Sara Deshpande**, #TheCloser                           
 **Role** - Checkout Experience
 
-**Shivli Soni**, #DirectorOfFirstImpressions
+**Shivli Soni**, #DirectorOfFirstImpressions                                 
 **Role** - Splash Screen and Home Page
 
-**Shourya Jain**, #TheGatekeeperOfGetaways
+**Shourya Jain**, #TheGatekeeperOfGetaways                                 
 **Role** - Login Page and Tourism Destinations
 
-**Singhania Divyam Pareshkumar**, #JackOfAllTradesMasterOfNone
+**Singhania Divyam Pareshkumar**, #JackOfAllTradesMasterOfNone                               
 **Role** - Hotels Page, APIs, and Backend Architecture
 
 ---
