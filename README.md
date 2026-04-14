@@ -80,19 +80,24 @@ To run this project, you must insert your own API keys:
 ## 👥 Meet the Team
 
 **Samriddh Anand**, #TheCuratorOfQuests
-\n**Role** - Tourist Packages Feature
+
+**Role** - Tourist Packages Feature
 
 **Sara Deshpande**, #TheCloser
-\n**Role** - Checkout Experience
+
+**Role** - Checkout Experience
 
 **Shivli Soni**, #DirectorOfFirstImpressions
-\n**Role** - Splash Screen and Home Page
+
+**Role** - Splash Screen and Home Page
 
 **Shourya Jain**, #TheGatekeeperOfGetaways
-\n**Role** - Login Page and Tourism Destinations
+
+**Role** - Login Page and Tourism Destinations
 
 **Singhania Divyam Pareshkumar**, #JackOfAllTradesMasterOfNone
-\n**Role** - Hotels Page, APIs, and Backend Architecture
+
+**Role** - Hotels Page, APIs, and Backend Architecture
 
 ---
 *Created with ❤️ for travelers by Team GetSetChalo.*
