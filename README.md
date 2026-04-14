@@ -79,13 +79,13 @@ To run this project, you must insert your own API keys:
 
 ## 👥 Meet the Team
 
-**Samriddh Anand**, #TheMasterOfExpeditions                          
+**Samriddh Anand**, #TheExpeditionsAlchemist                    
 **Role** - Tourist Packages Feature
 
-**Sara Deshpande**, #TheDealSealer                           
+**Sara Deshpande**, #ThePointOfNoReturn                          
 **Role** - Checkout Experience
 
-**Shivli Soni**, #TheArchitectOfAesthetics                                
+**Shivli Soni**, #TheArchmageOfAesthetics                                
 **Role** - Splash Screen and Home Page
 
 **Shourya Jain**, #KeeperOfTheKeys                                
